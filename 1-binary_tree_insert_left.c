@@ -10,8 +10,7 @@
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
 	binary_tree_t *node = malloc(sizeof(binary_tree_t));
-	binary_tree_t *spot = parent->left;
-
+	binary_tree_t *spot;
 	if (!node)
 	{
 		printf("didnt make a node - returning null");
@@ -22,6 +21,8 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 		printf("didnt find a parent - returning null");
 		return (NULL);
 	}
+
+	spot = parent->left;
 	node->n = value;
 	node->right = NULL;
 	node->parent = parent;
