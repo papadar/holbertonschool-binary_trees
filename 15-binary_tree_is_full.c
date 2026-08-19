@@ -19,20 +19,14 @@ int binary_tree_is_full(const binary_tree_t *tree)
 		return (0);
 	left = tree->left;
 	right = tree->right;
-	if (left == NULL || right == NULL)
-	{
-		return (0);
-	}
-	if (binary_tree_balance(left) != 0 || binary_tree_balance(right) != 0)
-	{
-		return (0);
-	}
-	else if (binary_tree_height(left) != binary_tree_height(right))
-	{
-		return (0);
-	}
-	else
-	{
+	if (left == NULL && right == NULL)
 		return (1);
-	}
+	else if (left == NULL || right == NULL)
+		return (0);
+	else if (binary_tree_balance(left) != 0 || binary_tree_balance(right) != 0)
+		return (0);
+	else if (binary_tree_height(left) != binary_tree_height(right))
+		return (0);
+	else
+		return (1);
 }
