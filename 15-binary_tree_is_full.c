@@ -27,6 +27,10 @@ int binary_tree_is_full(const binary_tree_t *tree)
 	{
 		return (0);
 	}
+	else if (binary_tree_height(left) != binary_tree_height(right))
+	{
+		return (0);
+	}
 	else
 	{
 		return (1);
